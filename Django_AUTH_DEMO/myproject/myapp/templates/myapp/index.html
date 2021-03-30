@@ -1,0 +1,17 @@
+<html>
+    <body>
+        
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+                <h1>Welcome {{request.user}} </h1>
+                <p><a href="{% url 'user-logout' %}"> Logout  </a></p>
+            {% else %}
+            <p><a href="{% url 'sign-in' %}">Login</a></p>
+            <p><a href="{% url 'sign-up' %}" >Registration</a></p>
+       {% endif %}
+
+    </body>
+</html>
